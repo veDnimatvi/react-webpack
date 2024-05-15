@@ -1,6 +1,7 @@
 import React from "react"; // nạp thư viện react
 import ReactDOM from "react-dom"; // nạp thư viện react-dom
-
+import "./index.css";
+import "./index.sass";
 // Tạo component App
 function App() {
   return (

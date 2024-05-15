@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.js", // Dẫn tới file index.js ta đã tạo
@@ -20,8 +21,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/, // Sử dụng style-loader, css-loader cho file .css
-        use: ["style-loader", "css-loader"],
+        test: /\.(sa|sc|c)ss$/, // Sử dụng MiniCssExtractPlugin để build css ra 1 file css riêng mà không phải nằm trong bundle, css-loader cho file .css or .scss .sass
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
@@ -29,6 +30,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "style.css",
     }),
   ],
 };
