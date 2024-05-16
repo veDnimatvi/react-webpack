@@ -24,6 +24,10 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/, // Sử dụng MiniCssExtractPlugin để build css ra 1 file css riêng mà không phải nằm trong bundle, css-loader cho file .css or .scss .sass
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
+      {
+        test: /\.(jpe|jp|pn|sv)?g$|\.gif$|\.woff$|\.woff2$|\.eot$|\.ttf$|\.wav$|\.mp3$|\.ico$/,
+        use: "file-loader",
+      },
     ],
   },
   // Chứa các plugins sẽ cài đặt trong tương lai
