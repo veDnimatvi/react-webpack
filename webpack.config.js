@@ -17,7 +17,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/, // Sẽ sử dụng babel-loader cho những file .js
+        test: /\.js$|\.jsx$/, // Sẽ sử dụng babel-loader cho những file .js
         exclude: /node_modules/, // Loại trừ thư mục node_modules
         use: {
           loader: "babel-loader",
