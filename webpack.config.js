@@ -5,7 +5,7 @@ const VENDOR_LIBS = ["react", "react-dom"]; // những dependencies libs không 
 
 module.exports = {
   entry: {
-    bundle: "./src/index.js",
+    bundle: "./src/index.jsx",
     vendor: VENDOR_LIBS,
   },
   // Dẫn tới file index.js ta đã tạo, lần đầu vào trang web => tiến hành tải bandle.js và vendor.js về và lưu cache.
